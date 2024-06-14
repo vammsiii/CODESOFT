@@ -2,9 +2,8 @@ from tkinter import *
 from tkinter import messagebox
 import sqlite3 as sql
 
-
 class ToDoApp:
-    def _init_(self, root):
+    def __init__(self, root):
         self.root = root
         self.root.title("To-Do List")
         self.root.geometry("665x400+550+250")
@@ -105,8 +104,7 @@ class ToDoApp:
         for row in self.cursor.execute('SELECT title FROM tasks'):
             self.tasks.append(row[0])
 
-
-if _name_ == "_main_":
+if __name__ == "__main__":
     root = Tk()
     app = ToDoApp(root)
     root.mainloop()
